@@ -38,13 +38,13 @@ app.use("/auth", createProxyMiddleware({
 }));
 
 app.use("/admin", verifyToken("admin"), createProxyMiddleware({
-  target: "http://localhost:5003",
+  target: "http://172.31.18.46:5003",
   changeOrigin: true,
   pathRewrite: { "^/": "/admin/" },
 }));
 
 app.use("/user", verifyToken("user"), createProxyMiddleware({
-  target: "http://localhost:5004",
+  target: "http://172.31.28.87:5004",
   changeOrigin: true,
   pathRewrite: { "^/": "/user/" },
   on: {
